@@ -29,7 +29,7 @@ public class WhatIsAtIdx_PointQueryRangeUpdate {
             build(1, 0, n - 1);
         }
 
-        void build(int id, int start, int end) {
+        private void build(int id, int start, int end) {
             if (start == end)
                 tree[id] = arr[start];
             else {
@@ -43,7 +43,7 @@ public class WhatIsAtIdx_PointQueryRangeUpdate {
             update(1, 0, n - 1, l, r, val);
         }
 
-        void update(int id, int start, int end, int l, int r, int val) {
+        private void update(int id, int start, int end, int l, int r, int val) {
             if (end < l || r < start)
                 return;
             else if (start == end)
@@ -61,15 +61,18 @@ public class WhatIsAtIdx_PointQueryRangeUpdate {
             return query(1, 0, n - 1, ind);
         }
 
-        int query(int id, int start, int end, int ind) {
+        private int query(int id, int start, int end, int ind) {
             if (start == end)
                 return tree[id];
             else {
-                int mid = (start + end) / 2;
+                int mid = (start + end) / 2, left = 2 * id, right = left + 1;
+                tree[left] += tree[id];
+                tree[right] += tree[id];
+                tree[id] = 0;
                 if (ind <= mid)
-                    return tree[id] + query(2 * id, start, mid, ind);
+                    return query(left, start, mid, ind);
                 else
-                    return tree[id] + query(2 * id + 1, mid + 1, end, ind);
+                    return query(right, mid + 1, end, ind);
             }
         }
 
