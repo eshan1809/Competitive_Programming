@@ -1,3 +1,9 @@
+/*
+You have been given three Integers a, b and k. you need to find an integral solution of x and y such that a*x + b*y= k * gcd(a,b). 
+
+It can be proven that solution always exist.
+*/
+
 import java.util.Scanner;
 
 public class LinearDiophantineEquation {

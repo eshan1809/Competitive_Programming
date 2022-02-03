@@ -1,3 +1,8 @@
+/*
+You have been given two Integers a and b. you need to find an integral solution of x and y such that a*x + b*y= gcd(a,b).
+It can be proven that solution always exist.
+*/
+
 import java.util.Scanner;
 
 public class ExtendedEuclideanAlgorithm {
