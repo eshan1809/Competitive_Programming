@@ -4,9 +4,9 @@ public class ExtendedEuclideanAlgorithm {
 
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
-        int a = scn.nextInt(), b = scn.nextInt();
+        int a = scn.nextInt(), b = scn.nextInt(), k = scn.nextInt();
         int[] ans = solve(a, b);
-        System.out.println(ans[0] + " " + ans[1]);
+        System.out.println(1L * k * ans[0] + " " + 1L * k * ans[1]);
         scn.close();
     }
 
