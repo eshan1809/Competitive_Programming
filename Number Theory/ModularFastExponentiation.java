@@ -1,3 +1,9 @@
+/*
+1. You are given a number x.
+2. You are given another number n.
+3. You are required to calculate x raised to the power n mod 10^9 + 7 in logn complexity.
+*/
+
 import java.io.IOException;
 import java.util.Scanner;
 
