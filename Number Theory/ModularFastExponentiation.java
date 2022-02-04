@@ -11,7 +11,7 @@ public class ModularFastExponentiation {
     public static int xpown(long x, long n, long p) {
         if (n == 0)
             return 1;
-        int ans = xpown(x, n >> 1, p);
+        int ans = xpown(x, n / 2, p);
         ans %= p;
         ans = (int) ((1L * ans * ans) % p);
         if ((n & 1) == 1)
