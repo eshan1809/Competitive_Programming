@@ -14,10 +14,30 @@ Output x and y.
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.stream.*;
 
 public class GCDLength {
     public static void main(String[] args) throws NumberFormatException, IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        PrintWriter out = new PrintWriter(System.out);
 
+        int t = Integer.parseInt(br.readLine());
+        while (t-- > 0) {
+            int[] arr = Stream.of(br.readLine().split(" ")).mapToInt(a -> Integer.parseInt(a)).toArray();
+            int c = 1;
+            while ((c + "").length() < arr[2])
+                c *= 10;
+            int a = c, b = c;
+            while ((a + "").length() < arr[0]) {
+                a *= 2;
+            }
+            while ((b + "").length() < arr[1]) {
+                b *= 3;
+            }
+            out.println(a + " " + b);
+        }
+
+        out.flush();
     }
 }
